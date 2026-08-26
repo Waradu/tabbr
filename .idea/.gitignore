@@ -1,0 +1,14 @@
+# User-specific IDE state
+/workspace.xml
+/tasks.xml
+/usage.statistics.xml
+
+# Local changes and scratch requests
+/shelf/
+/httpRequests/
+
+# Generated database introspection state
+/dataSources/
+/dataSources.local.xml
+/dataSources.xml
+data_source_mapping.xml
