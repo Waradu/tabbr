@@ -17,7 +17,7 @@ normal shell completion remains available.
 
 > [!CAUTION]
 > The built-in exclusions are not exhaustive. Commands are stored unencrypted in a local SQLite database, so add
-exclusion patterns for anything you do not want stored.
+> exclusion patterns for anything you do not want stored.
 
 ## Install
 
