@@ -52,7 +52,7 @@ type CLI struct {
 	Remove  RemoveCommand  `cmd:"" help:"Remove a command from the store"`
 	List    ListCommand    `cmd:"" help:"List all commands in the store"`
 	Path    PathCommand    `cmd:"" db:"none" help:"Print the database path"`
-	Prepare PrepareCommand `cmd:"" db:"none" help:"Prepare the database"`
+	Prepare PrepareCommand `cmd:"" help:"Prepare the database"`
 	Query   QueryCommand   `cmd:"" help:"Find matching commands"`
 	Exclude ExcludeCommand `cmd:"" help:"Manage exclusions"`
 }
