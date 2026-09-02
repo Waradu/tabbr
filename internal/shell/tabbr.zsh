@@ -35,7 +35,7 @@ _tabbr_cycle() {
 
 	_tabbr_reset
 
-	if (( CURSOR != ${#BUFFER} )) || [[ "$BUFFER" == *[[:space:]]* ]]; then
+	if (( CURSOR != ${#BUFFER} )); then
 		_tabbr_fallback "$fallback"
 		return
 	fi

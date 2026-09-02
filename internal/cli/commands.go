@@ -57,6 +57,9 @@ func (cmd *QueryCommand) Run(app *App) error {
 	if strings.IndexFunc(cmd.Text, unicode.IsSpace) >= 0 {
 		return fmt.Errorf("query must not contain spaces")
 	}
+	if looksLikePath(cmd.Text) {
+		return fmt.Errorf("query must not be a path")
+	}
 
 	commands, err := store.List(app.DB)
 	if err != nil {
@@ -71,6 +74,15 @@ func (cmd *QueryCommand) Run(app *App) error {
 	}
 
 	return nil
+}
+
+func looksLikePath(text string) bool {
+	if text == "." || text == ".." || strings.HasPrefix(text, "~") || strings.ContainsAny(text, `/\`) {
+		return true
+	}
+
+	return len(text) >= 2 && text[1] == ':' &&
+		(text[0] >= 'a' && text[0] <= 'z' || text[0] >= 'A' && text[0] <= 'Z')
 }
 
 func (cmd *ExcludeAddCommand) Run(app *App) error {

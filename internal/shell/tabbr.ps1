@@ -52,7 +52,7 @@ function global:_tabbr_cycle {
 
 	_tabbr_reset
 
-	if ($cursor -ne $line.Length -or $line -match '\s') {
+	if ($cursor -ne $line.Length) {
 		_tabbr_fallback $Key $Argument $Direction
 		return
 	}

@@ -12,7 +12,6 @@ _tabbr_complete() {
 	COMPREPLY=()
 
 	(( COMP_POINT == ${#COMP_LINE} )) || return 0
-	[[ $COMP_LINE != *[[:space:]]* ]] || return 0
 
 	while IFS= read -r match; do
 		[[ -n $match ]] && COMPREPLY+=("$match")
