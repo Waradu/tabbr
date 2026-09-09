@@ -21,6 +21,14 @@ normal shell completion remains available.
 
 ## Install
 
+With Homebrew:
+
+```sh
+brew install waradu/tap/tabbr
+```
+
+Or with Go:
+
 ```sh
 go install github.com/waradu/tabbr/cmd/tabbr@latest
 ```
