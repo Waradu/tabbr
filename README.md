@@ -103,3 +103,7 @@ Remove an exclusion.
 #### `tabbr exclude list`
 
 List all exclusion patterns.
+
+## Licence
+
+Tabbr is licensed under the [GNU General Public License v3.0](LICENSE) (GPL-3.0-only).
