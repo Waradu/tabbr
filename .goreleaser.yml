@@ -1,0 +1,50 @@
+version: 2
+
+project_name: tabbr
+
+release:
+  prerelease: auto
+
+builds:
+  - main: ./cmd/tabbr
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - darwin
+      - linux
+      - windows
+    goarch:
+      - amd64
+      - arm64
+
+archives:
+  - formats: [tar.gz]
+    format_overrides:
+      - goos: windows
+        formats: [zip]
+    files:
+      - LICENSE
+      - README.md
+
+homebrew_casks:
+  - name: tabbr
+    homepage: https://github.com/waradu/tabbr
+    description: Fuzzy autocomplete for commands you actually use
+    binaries: [tabbr]
+    skip_upload: auto
+    repository:
+      owner: waradu
+      name: homebrew-tap
+      token: "{{ .Env.HOMEBREW_TAP_TOKEN }}"
+    commit_msg_template: "chore: update tabbr to {{ .Tag }}"
+    caveats: |
+      To enable Tabbr in Zsh, add to ~/.zshrc:
+        eval "$(tabbr init zsh)"
+
+      For Bash 4.4 or newer, add to ~/.bashrc:
+        eval "$(tabbr init bash)"
+
+      For PowerShell 5.1 or newer with PSReadLine 2.0 or newer, add to $PROFILE:
+        Invoke-Expression (& { (tabbr init pwsh | Out-String) })
+
+      Restart your shell after installing or upgrading to load the shell integration.
