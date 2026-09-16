@@ -36,8 +36,8 @@ func Open() (*sql.DB, error) {
 	db.SetMaxIdleConns(1)
 
 	if _, err := db.Exec(`
-		PRAGMA journal_mode = WAL;
 		PRAGMA busy_timeout = 5000;
+		PRAGMA journal_mode = WAL;
 	`); err != nil {
 		_ = db.Close()
 		return nil, err
