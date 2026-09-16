@@ -2,9 +2,7 @@
 
 Fuzzy autocomplete for commands you actually use.
 
-```text
-brd<Tab>  →  bun run dev
-```
+<img width="500" alt="Tabbr preview" src="./assets/demo.gif" />
 
 Tabbr learns commands that finish successfully. Tab expands the best match, repeated Tab cycles through matches, and
 normal shell completion remains available.
